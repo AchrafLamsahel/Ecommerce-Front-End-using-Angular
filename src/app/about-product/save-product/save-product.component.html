@@ -1,0 +1,93 @@
+<button type="button" class="btn btn-link" routerLink="/home"> <-- Return</button>
+
+<body class="achraf">
+  <div class="container">
+    <mat-card class="example-card-header mb-2">
+      <p class="header-card-text">Add Product</p>
+    </mat-card>
+    <mat-card class="example-card">
+      <mat-card-content>
+        <div class="row">
+          <form [formGroup]="productForm">
+            <div class="row">
+              <label class="col-2 label">Product Name</label>
+              <mat-form-field class="col-10" appearance="outline">
+                <mat-label>Product Name</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="name">
+              </mat-form-field>
+
+              <label class="col-md-2 label">Category</label>
+              <mat-form-field class="col-md-3" appearance="outline">
+                <mat-label>Select</mat-label>
+                <mat-select formControlName="category" ngDefaultControl>
+                  <div>
+                    <mat-option value="Mobiles">Mobiles</mat-option>
+                    <mat-option value="Automobiles">Automobiles</mat-option>
+                    <mat-option value="Electronics">Electronics</mat-option>
+                    <mat-option value="Computers">Computers</mat-option>
+                    <mat-option value="Fashion">Fashion</mat-option>
+                    <mat-option value="Appliances">Appliances</mat-option>
+                    <mat-option value="Furnitures">Furnitures</mat-option>
+                  </div>
+                </mat-select>
+              </mat-form-field>
+
+              <label class="col-md-3 label">targetGender</label>
+              <mat-form-field class="col-md-4" appearance="outline">
+                <mat-label><i class="fa-solid fa-location-dot"  style="margin-right: 0.5rem;"> </i>targetGender
+                </mat-label>
+                <mat-select formControlName="targetGender" ngDefaultControl>
+                  <mat-option value="Men">Men</mat-option>
+                  <mat-option value="Woman">Woman</mat-option>
+                  <mat-option value="Children">Children</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <label class="col-md-3 label">City</label>
+              <mat-form-field class="col-md-4" appearance="outline">
+                <mat-label><i class="fa-solid fa-location-dot"  style="margin-right: 0.5rem;"> </i>Place
+                </mat-label>
+                <mat-select formControlName="city" ngDefaultControl>
+                  <mat-option value="Casablanca">Casablanca</mat-option>
+                  <mat-option value="El Jadida">El Jadida</mat-option>
+                  <mat-option value="Tanger">Tanger</mat-option>
+                  <mat-option value="Agadir">Agadir</mat-option>
+                  <mat-option value="Marrakech">Marrakech</mat-option>
+                  <mat-option value="Fés">Fés</mat-option>
+                  <mat-option value="Meknès">Meknès</mat-option>
+                  <mat-option value="Rabat">Rabat</mat-option>
+                  <mat-option value="Essaouira">Essaouira</mat-option>
+                  <mat-option value="Al Hoceïma">Al Hoceïma</mat-option>
+                  <mat-option value="Berkane">Berkane</mat-option>    
+                </mat-select>
+              </mat-form-field>
+          <div>
+              <label class="col-md-2 label">Description</label>
+              <mat-form-field class="col-md-10" appearance="outline">
+                <textarea formControlName="description" matInput></textarea>
+              </mat-form-field>
+          </div>
+              <label class="col-2 label">Price</label>
+              <mat-form-field class="col-3" appearance="outline">
+                <mat-label>Price</mat-label>
+                <input formControlName="coin" matInput placeholder="Placeholder">
+              </mat-form-field>
+              <label class="col-md-3 label">Add Image</label>
+              <div class="col-md-4 mt-3">
+                <!--<input type="file" (change)="handleFileInput($event.target['files'])" formControlName="image"/> -->
+                <input type="file" (change)="onChange($event)" formControlName="image"/>
+            <img [src]="myImage" alt="image" class="show-img">
+              </div>
+            </div>
+          </form>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="button">
+      <button class="btn" (click)="onClickSubmitForm()" mat-raised-button style="background: #43db52">
+        Add
+      </button>
+    </div>
+  </div>
+</body>

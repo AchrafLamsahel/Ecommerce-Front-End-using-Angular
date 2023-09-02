@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="card col-md-6 offset-md-3 mt-2">
+        <div class="card-header">Update Product</div>
+        <div class="card-body">
+            <form [formGroup]="updateProductFormGroup" (ngSubmit)="handleUpdateProduct()">
+                <div class="mb-3">
+                    <label class="form-label">Name :</label>
+                    <input type="text" formControlName="name" class="form-control">
+                </div>
+                
+                <mat-label>Category :</mat-label>
+                    <mat-select formControlName="category" ngDefaultControl>
+                        <mat-option value="Mobiles">Mobiles</mat-option>
+                        <mat-option value="Automobiles">Automobiles</mat-option>
+                        <mat-option value="Electronics">Electronics</mat-option>
+                        <mat-option value="Computers">Computers</mat-option>
+                        <mat-option value="Fashion">Fashion</mat-option>
+                        <mat-option value="Appliances">Appliances</mat-option>
+                        <mat-option value="Furnitures">Furnitures</mat-option>
+                      </mat-select>
+                    
+                <label class="form-label">Gender :</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="targetGender" class="form-control">
+                        <option value="Men">Men</option>
+                        <option value="Women">Women</option>
+                        <option value="Children">Children</option>
+                    </select>
+
+                <div class="mb-3">
+                    <label class="form-label">Description :</label>
+                    <input type="text" formControlName="description" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">City :</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="city" class="form-control">
+                        <option value="Casablanca">Casablanca</option>
+                        <option value="El Jadida">El Jadida</option>
+                        <option value="Tanger">Tanger</option>
+                        <option value="Marrakech">Marrakech</option>
+                        <option value="Fés">Fés</option>
+                        <option value="Meknès">Meknès</option>
+                        <option value="Rabat">Rabat</option>
+                        <option value="Essaouira">Essaouira</option>
+                        <option value="Al Hoceïma">Al Hoceïma</option>
+                        <option value="Berkane">Berkane</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Prix :</label>
+                    <input type="text" formControlName="coin" class="form-control">
+                </div>
+
+                <label class="col-md-3 label">Add Image</label>
+              <div class="col-md-4 mt-3">
+                <input type="file" (change)="onChange($event)" formControlName="image"/>
+                <img [src]="image" alt="image" class="show-img">
+              </div>
+            
+
+                <button class="btn btn-info mt-3">Update Product</button>
+            </form>
+        </div>
+    </div>
+</div>

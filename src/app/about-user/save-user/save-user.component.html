@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Login Application E-Shopping</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body>
+  <section class="ftco-section">
+    <div class="container">
+      
+      <div class="row justify-content-center">
+        <div class="col-md-12 col-lg-10">
+          <div class="wrap d-md-flex">
+            <div class="img" style="background-image: url(assets/images/register.png);">
+        </div>
+            <div class="login-wrap p-4 p-md-5">
+          <div class="d-flex">
+            <div class="w-100">
+              <h3 class="mb-4">Sign In</h3>
+            </div>
+                <div class="w-100">
+                  <p class="social-media d-flex justify-content-end">
+                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+                  </p>
+                </div>
+          </div>
+          <form  class="signin-form" [formGroup]="newUserFormGroupe" (ngSubmit)="handleSaveUser()">
+            <div class="form-group mb-3">
+              <label class="label" for="use">Name :</label>
+              <input formControlName="username" class="form-control" id="name" type="text" placeholder="username" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="label" for="use">Email :</label>
+                <input  formControlName="email" class="form-control" id="name" type="text" placeholder="username" required>
+              </div>
+
+              <div class="form-group mb-3">
+                <label class="label" for="use">Password :</label>
+                <input type="password" formControlName="password" class="form-control" id="name"  placeholder="username" required>
+              </div>
+
+              <div class="form-group mb-3">
+                <label class="label" for="use">Confirm Password : </label>
+                <input type="password" formControlName="password1" class="form-control" id="name"  placeholder="username" required>
+              </div>
+
+              <div class="form-group mb-3">
+                <input type="file" (change)="onChange($event)" formControlName="userImg"/>
+                <label class="label" for="use">Image :</label>
+              </div>
+                <Img [src]="myImage" alt="image" class="show-img" required>
+     
+          <div class="form-group">
+            <button type="submit" class="form-control btn btn-primary rounded submit px-3">Register</button>
+          </div>
+      
+     
+          </form>
+            
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+<!--
+
+<div class="container">
+    <div class="card col-md-6 offset-3 mt-2">
+        <div class="card-header"><b>Register</b></div>
+        <div class="card-body">
+            <form  [formGroup]="newUserFormGroupe" (ngSubmit)="handleSaveUser()" >
+                <div class="nb-3">
+                    <label class="form-label">Name : </label>
+                    <input type="text" formControlName="username" class="form-control">
+                </div>
+
+                <div class="nb-3">
+                    <label class="form-label">Email : </label>
+                    <input type="text" formControlName="email" class="form-control">
+                </div>
+
+                <div class="nb-3">
+                    <label class="form-label">Password : </label>
+                    <input type="password" formControlName="password" class="form-control">
+                </div>
+
+                <div class="nb-3">
+                    <label class="form-label">Confirm Password : </label>
+                    <input type="password" formControlName="password" class="form-control">
+                </div>
+
+                <label class="col-md-3 label">Add Image</label>
+                <div class="col-md-4 mt-3">-->
+                  <!-- <input type="file" (change)="handleFileInput($event.target['files'])" formControlName="image"/> -->
+              <!--  <input type="file" (change)="onChange($event)" formControlName="userImg"/>
+              <img [src]="myImage" alt="image" class="show-img">
+                </div>
+                <button class="btn btn-info mt-3" >Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+-->  
+<!-- (change)="onChange($event)"  -->

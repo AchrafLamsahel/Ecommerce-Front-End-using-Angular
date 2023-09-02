@@ -1,0 +1,66 @@
+<button type="button" class="btn btn-link" routerLink="/home"> <-- Return</button>
+
+
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+      <div class="item">
+          <a >
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+              <h6>All products</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a >
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
+              <h6>Electronics</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a >
+              <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
+              <h6>Fashion</h6>
+          </a>
+      </div>
+      <div class="item">
+          <a >
+              <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
+              <h6>Jewllery</h6>
+          </a>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let a of products ">
+            <div class="card col-md-3">
+                <img src="{{a.image}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{a.name}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{a.description}}</p>
+                <p><strong>Price:</strong>{{a.coin}} $</p>
+                <button class="btn btn-primary" (click)=addtocart(a)>Add to cart</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+
+<!--
+  <div class="yts">
+      <div class="card"  *ngFor="let a of getproduct " style="width: 18rem;">
+        <img [src]="a.image" class="card-img-top" (click)="goToProduct(a.id)" >
+        <div class="card-body">
+          <h5 class="card-title"><b>{{a.name}}</b></h5>
+          <p class="card-text">{{a.description}}</p>
+          <p>{{a.city}}</p>
+          <p>{{a.datepost.substring(0,10)}}</p>
+        </div>
+        <a href="/details-products" class="btn btn-primary">+ Add To Cart</a>
+          <button (click)="handleDeleteProduct(a)" class="btn btn-danger">
+            <i class="bi bi-trash"></i>
+      </button>
+      </div>
+  </div>
+-->
+
+

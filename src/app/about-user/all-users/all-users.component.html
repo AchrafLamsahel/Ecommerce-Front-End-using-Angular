@@ -1,0 +1,54 @@
+<button type="button" class="btn btn-link" routerLink="/home"> <-- Return</button>
+<div class="container mt-2">
+  <div class="card">
+<ng-container *ngIf="users | async as listUsers; else failureOrLoading">
+      <div class="card-header"*ngIf="searchformGroup"><b>All Clients</b>
+      <div >
+      <form *ngIf="searchformGroup" (ngSubmit)="handleSearch()">
+          <div class="input-group">
+              <label class="input-group-text"> Search :</label>
+              <input type="text" formControlName="username" class="form-control">
+              <button type="submit" class="btn btn-info">
+                  <i class="bi bi-search" ></i>
+                  Search
+              </button>
+          </div>
+      </form>
+  </div>
+      </div>
+      <table class="table">
+      <thead>
+          <tr>
+              <td><b>image</b></td><th>UserName</th><th>Email</th><th>Delete</th><th>Profil</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let c of listUsers">
+              
+          <td class="image">
+              <img [src]="c.userImg" alt="User Image" class="image">
+          </td>
+          <td>{{c.username}}</td>
+          <td>{{c.email}}</td>
+          
+          <td>
+              <button (click)="handleDeleteUser(c)"   class="btn btn-danger">
+                  <i class="bi bi-trash">Delete</i>
+              </button>
+          </td>
+      
+      <td>
+          <button (click)="handleDetailsUser(c.id)"   class="btn btn-success">
+          <i class="bi bi-info"></i>Profil
+          </button>
+      </td>
+      </tbody>
+      </table>
+</ng-container>
+  <ng-template #failureOrLoading>
+      <div class="text-danger">
+      {{errorMessage || 'Loading...'}}
+      </div>
+  </ng-template>
+  </div>
+</div>

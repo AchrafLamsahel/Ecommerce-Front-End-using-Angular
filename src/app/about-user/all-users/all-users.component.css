@@ -1,0 +1,7 @@
+ .image {
+    width : 100px; height : 100px;
+    border: none;
+    -moz-border-radius : 75px;
+    -webkit-border-radius : 75px;
+    border-radius : 75px;
+ }

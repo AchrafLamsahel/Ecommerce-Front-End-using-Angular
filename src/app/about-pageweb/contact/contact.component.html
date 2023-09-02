@@ -1,0 +1,44 @@
+<button type="button" class="btn btn-link" routerLink="/home"> <-- Return</button>
+
+ <div class="container">
+    <h1 class="h1">Contact Us</h1>
+    <!-- Wrapper container -->
+    <div class="container py-4">
+
+        <!-- Bootstrap 5 starter form -->
+        <form id="contactForm" [formGroup]="contactForm">
+      
+          <!-- Name input -->
+          <div class="mb-3">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-control" formControlName="name" id="name" type="text" placeholder="Name" />
+          </div>
+      
+          <!-- Email address input -->
+          <div class="mb-3">
+            <label class="form-label" for="emailAddress">Email Address</label>
+            <input class="form-control" formControlName="emailAddress" id="emailAddress" type="email" placeholder="Email Address" />
+          </div>
+
+          <!-- Email address input -->
+          <div class="mb-3">
+            <label class="form-label" for="numberPhone">Number Phone</label>
+            <input class="form-control" formControlName="numberPhone" id="numberPhone" type="number" placeholder="numberPhone" />
+          </div>
+      
+          <!-- Message input -->
+          <div class="mb-3">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-control" formControlName="message" id="message" type="text" placeholder="Message" style="height: 10rem;"></textarea>
+          </div>
+      
+          <!-- Form submit button -->
+          <div class="d-grid">
+            <button class="btn btn-primary btn-lg" (click)="onClickSubmitForm()" type="submit">Save</button>
+          </div>
+      
+        </form>
+        
+      </div>
+    </div>
+

@@ -1,0 +1,73 @@
+    <!doctype html>
+    <html lang="en">
+    <head>
+      <title>Login Application E-Shopping</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      </head>
+      <body>
+      <section class="ftco-section">
+        <div class="container">
+          
+          <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-10">
+              <div class="wrap d-md-flex">
+                <div class="img" style="background-image: url(assets/images/login.png);">
+            </div>
+                <div class="login-wrap p-4 p-md-5">
+              <div class="d-flex">
+                <div class="w-100">
+                  <h3 class="mb-4">Sign In</h3>
+                </div>
+                    <div class="w-100">
+                      <p class="social-media d-flex justify-content-end">
+                        <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+                        <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+                      </p>
+                    </div>
+              </div>
+        <div *ngIf="errorMessage" class="alert alert-danger" role="alert"> {{errorMessage}} </div> <!-- Login Form -->
+              <form  class="signin-form" [formGroup]="form" (ngSubmit)="submit()">
+                <div class="form-group mb-3">
+                  <label class="label" for="use">Username</label>
+                  <input formControlName="username" id="name" type="text" class="form-control" placeholder="login" required>
+                  <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['username'].errors != null && f['username'].errors['required']">Nom utilisateur
+                      obligatoire. </div>
+                  </div>
+                </div>
+              <div class="form-group mb-3">
+                <label class="label" for="password">Password</label>
+              <input formControlName="password" id="password" type="password" class="form-control" placeholder="Password" required>
+              <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                <div *ngIf="f['password'].errors != null && f['password'].errors['required']">Mot de passe obligatoire.
+                </div>
+              </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+              </div>
+              
+            </form>
+              <div class="form-group d-md-flex">
+                <div class="w-50 text-left">
+                  <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
+                      <input type="checkbox" checked>
+                      <span class="checkmark"></span>
+                        </label>
+                      </div>
+                      <div class="w-50 text-md-right">
+                        <a href="#">Forgot Password</a>
+                      </div>
+              </div>
+            
+            <p class="text-center">Not a member? <a data-toggle="tab" href="/save-user">Sign Up</a></p>
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      </body>
+    </html>
+
