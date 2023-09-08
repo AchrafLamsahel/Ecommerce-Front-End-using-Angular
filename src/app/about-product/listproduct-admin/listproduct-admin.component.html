@@ -1,58 +1,60 @@
-<button type="button" class="btn btn-link" routerLink="/home"> <-- Return</button>
+  
+
+    <button type="button" class="btn btn-link" routerLink="/home"> <-- Return</button>
 
 
-<div class="container mt-2">
-    <div class="card">
-  <ng-container *ngIf="products | async as listUsers; else failureOrLoading">
-        <div class="card-header"><b>All Products</b>
-        <div >
-        <form>
-            <div class="input-group">
-                <label class="input-group-text"> Search :</label>
-                <input type="text"  class="form-control">
-                <button type="submit" class="btn btn-info">
-                    <i class="bi bi-search" ></i>
-                    Search
-                </button>
+        <div class="container mt-2">
+            <div class="card">
+        <ng-container *ngIf="products | async as listUsers; else failureOrLoading">
+                <div class="card-header"><b>All Products</b>
+                <div >
+                <form>
+                    <div class="input-group">
+                        <label class="input-group-text"> Search :</label>
+                        <input type="text"  class="form-control">
+                        <button type="submit" class="btn btn-info">
+                            <i class="bi bi-search" ></i>
+                            Search
+                        </button>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
-        </div>
-        <table class="table">
-        <thead>
-            <tr>
-                <td><b>image</b></td><th>Name Product</th><th>Price</th><th>Update</th><th>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let c of listUsers">
-                
-            <td class="image">
-                <img [src]="c.image" alt="User Image" class="image">
-            </td>
-            <td>{{c.name}}</td>
-            <td>{{c.coin}} <b>$</b></td>
+                </div>
+                <table class="table">
+                <thead>
+                    <tr>
+                        <td><b>image</b></td><th>Name Product</th><th>Price</th><th>Update</th><th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of listUsers">
+                        
+                    <td class="image">
+                        <img [src]="c.image" alt="User Image" class="image">
+                    </td>
+                    <td>{{c.name}}</td>
+                    <td>{{c.coin}} <b>$</b></td>
 
-            <td>
-                <button (click)="handleUpdateProduct(c.id)"   class="btn btn-success">
-                <i class="bi bi-info">Update</i>
-                </button>
-            </td>
-            
-            <td>
-                <button (click)="handleDeletProduct(c)"   class="btn btn-danger">
-                    <i class="bi bi-trash"></i>
-                </button>
-            </td>
-        
-        
-        </tbody>
-        </table>
-  </ng-container>
-    <ng-template #failureOrLoading>
-        <div class="text-danger">
-        {{errorMessage || 'Loading...'}}
+                    <td>
+                        <button (click)="handleUpdateProduct(c.id)"   class="btn btn-success">
+                        <i class="bi bi-info">Update</i>
+                        </button>
+                    </td>
+                    
+                    <td>
+                        <button (click)="handleDeletProduct(c)"   class="btn btn-danger">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </td>
+                
+                
+                </tbody>
+                </table>
+        </ng-container>
+            <ng-template #failureOrLoading>
+                <div class="text-danger">
+                {{errorMessage || 'Loading...'}}
+                </div>
+            </ng-template>
+            </div>
         </div>
-    </ng-template>
-    </div>
-  </div>

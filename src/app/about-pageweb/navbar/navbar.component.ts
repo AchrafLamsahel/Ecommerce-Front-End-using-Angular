@@ -28,9 +28,16 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['login']);
   }
 
+  isLoggedIn() {
+    return this.tokenService.getToken() !== null;
+  }
+  hasClientAuthority() {
+    return !this.tokenService.hasRole('CLIENT');
+  }
+
   ngOnInit(): void {
     this.cartService.getProducts()
-    .subscribe(res=>{
+    .subscribe((res: string | any[])=>{
       this.totalItem = res.length;
     })
   }

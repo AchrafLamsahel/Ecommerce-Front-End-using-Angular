@@ -1,50 +1,52 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/home">E-Shopping</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="d-flex align-items-center" id="navbarText">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown mb-2">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Products
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="/products-men">Men-Products</a></li>
-            <li><a class="dropdown-item" routerLink="/products-women">Woman-Products</a></li>
-            <li><a class="dropdown-item" routerLink="/products-children">Children-Products</a></li>
-            <li><a class="dropdown-item" routerLink="/listproducts">All-Products</a></li>
+<div *ngIf="isLoggedIn()"> 
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/home">E-Shopping</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="d-flex align-items-center" id="navbarText">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown mb-2">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Products
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="/products-men">Men-Products</a></li>
+                <li><a class="dropdown-item" routerLink="/products-women">Woman-Products</a></li>
+                <li><a class="dropdown-item" routerLink="/products-children">Children-Products</a></li>
+                <li><a class="dropdown-item" routerLink="/listproducts">All-Products</a></li>
+              </ul>
+            </li>
+            
+            <li class="nav-item mb-2">
+              <a class="nav-link" routerLink="/about-us">About-Us</a>
+            </li>
+            
+            <li class="nav-item mb-2">
+              <a class="nav-link" routerLink="/contact">Contact Us</a>
+            </li>
+            
+            <form class="d-flex mb-2">
+              <button class="btn btn-outline-dark" type="submit" routerLink="/cart">
+                <i class="bi-cart-fill me-1"></i>
+                Cart
+                <span class="badge bg-dark text-white ms-1 rounded-pill">{{totalItem}}</span>
+              </button>
+            </form>
+      
+            <li class="nav-item dropdown mb-2">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Options</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#!" routerLink="/listproductsAdmin" *ngIf="hasClientAuthority()">ProductAdmin</a></li>
+                <li><a class="dropdown-item" routerLink="/save-product" *ngIf="hasClientAuthority()">+ Add Products</a></li>
+                <li><a class="dropdown-item" routerLink="/listusers" *ngIf="hasClientAuthority()">Users</a></li>
+                <li><hr class="dropdown-divider" *ngIf="hasClientAuthority()"></li>
+                <li><a class="dropdown-item" href="#!" (click)="onLogOut()">Log-Out</a></li>
+              </ul>
+            </li>
           </ul>
-        </li>
-        
-        <li class="nav-item mb-2">
-          <a class="nav-link" routerLink="/about-us">About-Us</a>
-        </li>
-        
-        <li class="nav-item mb-2">
-          <a class="nav-link" routerLink="/contact">Contact Us</a>
-        </li>
-        
-        <form class="d-flex mb-2">
-          <button class="btn btn-outline-dark" type="submit" routerLink="/cart">
-            <i class="bi-cart-fill me-1"></i>
-            Cart
-            <span class="badge bg-dark text-white ms-1 rounded-pill">{{totalItem}}</span>
-          </button>
-        </form>
-   
-        <li class="nav-item dropdown mb-2">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Options</a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#!" routerLink="/listproductsAdmin">ProductAdmin</a></li>
-            <li><a class="dropdown-item" routerLink="/save-product">+ Add Products</a></li>
-            <li><a class="dropdown-item" routerLink="/listusers">Users</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#!" (click)="onLogOut()">Log-Out</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>    
-  </div>
-</nav>
+        </div>    
+      </div>
+    </nav>
+  </div> 

@@ -21,6 +21,7 @@ import { UpdateProductComponent } from './about-product/update-product/update-pr
 import { AboutUsComponent } from './about-pageweb/about-us/about-us.component';
 
 
+
 const routes: Routes = [
   { path : '', redirectTo: 'login', pathMatch: 'full'  },
   { path : 'login'         , component : AuthorizationComponent},

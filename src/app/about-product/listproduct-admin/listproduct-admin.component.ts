@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable, catchError, map, throwError } from 'rxjs';
 import { Product } from 'src/app/model/product';
 import { ProductService } from 'src/app/services/product.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-listproduct-admin',
@@ -17,7 +18,7 @@ export class ListproductAdminComponent implements OnInit {
   persons! : Observable<Array<Product>>;
   person : Product = new Product();
   
-  constructor(private productService : ProductService,private fb: FormBuilder
+  constructor(private productService : ProductService,private tokenService :TokenStorageService,private fb: FormBuilder
              ,private router : Router,private activateRoot : ActivatedRoute){}
   
   products! : Observable<Array<Product>>;
@@ -32,7 +33,14 @@ export class ListproductAdminComponent implements OnInit {
     })
   );
   }
-
+/** 
+  isLoggedIn() {
+    if(this.tokenService.hasRole("ADMIN")){ return true;
+    }else{
+      return false ;
+    }
+  }
+*/
   handleUpdateProduct(id : any){
     this.router.navigate(['updateProduct',id])
   }
