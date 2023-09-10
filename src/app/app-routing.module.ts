@@ -19,6 +19,7 @@ import { AdminGuard } from './guards/admin.guard';
 import { ListproductAdminComponent } from './about-product/listproduct-admin/listproduct-admin.component';
 import { UpdateProductComponent } from './about-product/update-product/update-product.component';
 import { AboutUsComponent } from './about-pageweb/about-us/about-us.component';
+import { ResetPasswordComponent } from './about-user/reset-password/reset-password.component';
 
 
 
@@ -40,7 +41,8 @@ const routes: Routes = [
   { path : 'home'          ,component:HomeComponent,canActivate:[authGuard]},
   { path : 'listproductsAdmin' , component : ListproductAdminComponent,canActivate:[authGuard,AdminGuard]},
   { path : 'updateProduct/:id' , component:UpdateProductComponent,canActivate:[authGuard,AdminGuard]},
-  { path : 'about-us',component:AboutUsComponent,canActivate:[authGuard]}
+  { path : 'about-us',component:AboutUsComponent,canActivate:[authGuard]},
+  { path : 'resetPassword', component:ResetPasswordComponent}
 ];
 
 @NgModule({
