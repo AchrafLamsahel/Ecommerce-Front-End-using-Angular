@@ -36,6 +36,7 @@ import { CartComponent } from './about-pageweb/cart/cart.component';
 import { HomeComponent } from './about-pageweb/home/home.component';
 import { ListproductAdminComponent } from './about-product/listproduct-admin/listproduct-admin.component';
 import { AboutUsComponent } from './about-pageweb/about-us/about-us.component';
+import { codeActivateComponent } from './about-user/codeActivate/codeActivatereset-password.component';
 import { ResetPasswordComponent } from './about-user/reset-password/reset-password.component';
 
 
@@ -60,6 +61,7 @@ import { ResetPasswordComponent } from './about-user/reset-password/reset-passwo
     HomeComponent,
     ListproductAdminComponent,
     AboutUsComponent,
+    codeActivateComponent,
     ResetPasswordComponent
   ],
   imports: [

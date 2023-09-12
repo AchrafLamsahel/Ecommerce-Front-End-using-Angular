@@ -16,7 +16,7 @@ export class UserService {
   public getUsers():Observable<Array<User>>{
     return this.http.get<Array<User>>(this.backendHost+"/admin/usersClient")
   }
-  /**   Vrai  */
+  
   public saveUser(user : User):Observable<User>{
     return this.http.post<User>(this.backendHost+"/adminCreate",user);
   }
@@ -24,7 +24,7 @@ export class UserService {
   public search(username : string):Observable<Array<User>>{
     return this.http.get<Array<User>>(this.backendHost+"/admin/search?username="+username)
   }
-  /**   Vrai */
+  
   public delete(id : number) {
     return this.http.delete(this.backendHost+"/admin/user/"+id)
   }
